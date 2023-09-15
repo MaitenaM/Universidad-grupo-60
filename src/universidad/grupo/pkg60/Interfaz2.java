@@ -7,7 +7,7 @@ package universidad.grupo.pkg60;
 
 /**
  *
- * @author Fabrizzio
+ * @author Fabrizzio/Marcos
  */
 public class Interfaz2 extends javax.swing.JFrame {
 
@@ -35,6 +35,7 @@ public class Interfaz2 extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
 
@@ -80,6 +81,15 @@ public class Interfaz2 extends javax.swing.JFrame {
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Administracion");
+
+        jMenuItem2.setText("Inscripciones");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem2);
+
         jMenuBar1.add(jMenu4);
 
         jMenu5.setText("Consultas");
@@ -103,7 +113,47 @@ public class Interfaz2 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    /*
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        // TODO add your handling code here:
+           escritorio.removeAll();
+        escritorio.repaint();
+        InterfazInscripcion ven = new InterfazInscripcion ();
+        ven.setVisible(true);
+        escritorio.add(ven);
+        escritorio.moveToFront(ven);
+    }
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+           escritorio.removeAll();
+        escritorio.repaint();
+        InterfazInscripcion ven = new InterfazInscripcion ();
+        ven.setVisible(true);
+        escritorio.add(ven);
+        escritorio.moveToFront(ven);
+    }                                        
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+           escritorio.removeAll();
+        escritorio.repaint();
+        InterfazInscripcion ven = new InterfazInscripcion ();
+        ven.setVisible(true);
+        escritorio.add(ven);
+        escritorio.moveToFront(ven);
+    }                                        
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {
+        escritorio.removeAll();
+        escritorio.repaint();
+        InterfazInscripcion ven = new InterfazInscripcion ();
+        ven.setVisible(true);
+        escritorio.add(ven);
+        escritorio.moveToFront(ven);
+        // TODO add your handling code here:
+    } 
+    
+    */
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
         escritorio.removeAll();
@@ -112,7 +162,18 @@ public class Interfaz2 extends javax.swing.JFrame {
         ven.setVisible(true);
         escritorio.add(ven);
         escritorio.moveToFront(ven);
+       
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        escritorio.removeAll();
+        escritorio.repaint();
+        InterfazInscripcion ven = new InterfazInscripcion();
+        ven.setVisible(true);
+        escritorio.add(ven);
+        escritorio.moveToFront(ven);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -147,6 +208,7 @@ public class Interfaz2 extends javax.swing.JFrame {
                 new Interfaz2().setVisible(true);
             }
         });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -159,6 +221,7 @@ public class Interfaz2 extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
