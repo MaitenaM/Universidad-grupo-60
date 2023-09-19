@@ -28,16 +28,34 @@ public class Conexion {
     public static Connection getConexion(){
         if (connection == null){
             try {
-                Class.forName("org.mariadb.jdbc.Drive");
+                System.out.println("paso1");
+                
+               
+                
+                Class.forName("org.mariadb.jdbc.Driver");
+                System.out.println("paso2");
+                
+                //ACA ESTA EL ERROR
+                
+                
                 connection = DriverManager.getConnection(URL+DB+"?useLegacyDatetimeCode=flase&serverTimezone=UTC"+"&user="+USUARIO+"&password="+ PASSWORD);
                 
+                
+                
+                //
+                
+                
+                System.out.println("paso3");
             }catch (ClassNotFoundException ex){
-                JOptionPane.showMessageDialog(null, "Errror al conectarse a la Base de Datos"+ex.getMessage());
+                JOptionPane.showMessageDialog(null, "Errror al conectarse a la Base de Datos "+ex.getMessage());
             }catch (SQLException ex){
                 JOptionPane.showMessageDialog(null, "Error de Conexion");
             }
         }
+        System.out.println("Conexion establecida");
         return connection;
+        
+        
     }
 
     

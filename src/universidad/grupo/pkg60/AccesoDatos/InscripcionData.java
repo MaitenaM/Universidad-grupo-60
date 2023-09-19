@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package universidad.grupo.pkg60.accesoADatos;
+package universidad.grupo.pkg60.AccesoDatos;
 
 /**
  *
  * @author Fabrizzio
  */
-public class Conexion {
+public class InscripcionData {
     
 }

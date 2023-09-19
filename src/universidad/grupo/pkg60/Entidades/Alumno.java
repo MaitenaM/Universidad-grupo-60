@@ -91,6 +91,10 @@ public class Alumno {
     public String toString() {
         return "Alumno{" + "IDAlumno=" + IDAlumno + ", DNI=" + DNI + ", Apellido=" + Apellido + ", Nombre=" + Nombre + '}';
     }
+
+    public void setIdAlumno(int aInt) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     
