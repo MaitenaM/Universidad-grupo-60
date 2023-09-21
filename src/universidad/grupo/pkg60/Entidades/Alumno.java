@@ -22,7 +22,11 @@ public class Alumno {
     public Alumno() {
     }
 
-    public Alumno(int DNI, String Apellido, String Nombre, LocalDate FechaNac, boolean Estado) {
+    //public Alumnos(int i, String ariatello, String fabrizzio, LocalDate fecha2, boolean b) {
+      //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    //}
+
+    public  Alumno(int DNI, String Apellido, String Nombre, LocalDate FechaNac, boolean Estado) {
         this.DNI = DNI;
         this.Apellido = Apellido;
         this.Nombre = Nombre;
@@ -30,7 +34,7 @@ public class Alumno {
         this.Estado = Estado;
     }
 
-    public Alumno(int IDAlumno, int DNI, String Apellido, String Nombre, LocalDate FechaNac, boolean Estado) {
+    public  Alumno(int IDAlumno, int DNI, String Apellido, String Nombre, LocalDate FechaNac, boolean Estado) {
         this.IDAlumno = IDAlumno;
         this.DNI = DNI;
         this.Apellido = Apellido;

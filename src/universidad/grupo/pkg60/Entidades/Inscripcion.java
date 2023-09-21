@@ -12,18 +12,18 @@ package universidad.grupo.pkg60.Entidades;
 public class Inscripcion {
     
     private int IDInscripcion;
-    private Alumno alumno;
+    private Alumnos alumno;
     private Materias materias;
     private double nota;
 
-    public Inscripcion(int IDInscripcion, Alumno alumno, Materias materias, double nota) {
+    public Inscripcion(int IDInscripcion, Alumnos alumno, Materias materias, double nota) {
         this.IDInscripcion = IDInscripcion;
         this.alumno = alumno;
         this.materias = materias;
         this.nota = nota;
     }
 
-    public Inscripcion(Alumno alumno, Materias materias, double nota) {
+    public Inscripcion(Alumnos alumno, Materias materias, double nota) {
         this.alumno = alumno;
         this.materias = materias;
         this.nota = nota;
@@ -40,11 +40,11 @@ public class Inscripcion {
         this.IDInscripcion = IDInscripcion;
     }
 
-    public Alumno getAlumno() {
+    public Alumnos getAlumno() {
         return alumno;
     }
 
-    public void setAlumno(Alumno alumno) {
+    public void setAlumno(Alumnos alumno) {
         this.alumno = alumno;
     }
 

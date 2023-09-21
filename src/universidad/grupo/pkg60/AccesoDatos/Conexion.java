@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
  * @author Fabrizzio
  */
 public class Conexion {
-    private static final String URL ="jdbc:mysql://localhost";
+    private static final String URL ="jdbc:mariadb://localhost";
     private static final String DB ="universidadulp";
     private static final String USUARIO= "root";
     private static final String PASSWORD = "";
@@ -35,16 +35,8 @@ public class Conexion {
                 Class.forName("org.mariadb.jdbc.Driver");
                 System.out.println("paso2");
                 
-                //ACA ESTA EL ERROR
-                
-                
-                connection = DriverManager.getConnection(URL+DB+"?useLegacyDatetimeCode=flase&serverTimezone=UTC"+"&user="+USUARIO+"&password="+ PASSWORD);
-                
-                
-                
-                //
-                
-                
+                connection = DriverManager.getConnection(URL+"/"+DB,USUARIO,PASSWORD);
+               
                 System.out.println("paso3");
             }catch (ClassNotFoundException ex){
                 JOptionPane.showMessageDialog(null, "Errror al conectarse a la Base de Datos "+ex.getMessage());
