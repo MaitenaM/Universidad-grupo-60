@@ -17,18 +17,13 @@ public class MateriaData {
     
     private Connection con = null;
     
-
-    public MateriaData() {
-    
-  
-  public class MateriaData {
     // Atributos de la clase
     private String Numero;
     private String Anio;
     
 
     // Constructor de la clase
-    public AccesoMateriaData(String Numero, String Anio) {
+    public MateriaData(String Numero, String Anio) {
         this.Numero = Numero;
         this.Anio = Anio;
         
@@ -80,7 +75,6 @@ public class MateriaData {
 }
 
                 
+
     
-    }
-    
- }
+
