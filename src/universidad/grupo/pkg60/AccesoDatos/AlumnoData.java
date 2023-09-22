@@ -5,6 +5,7 @@
  */
 package universidad.grupo.pkg60.AccesoDatos;
 
+
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -56,6 +57,34 @@ public class AlumnoData {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla alumno" + ex.getMessage());
         }
     }
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    public Alumno buscarAlumno(int idAlumno){
+     String sql = "SELECT * FROM alumno WHERE idAlumno = ?";
+            Alumno  alumno = null;
+            PreparedStatement ps = null;
+           try {
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, idAlumno);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+            alumno=new Alumno();
+            alumno.setIdAlumno(idAlumno);
+            }
+            ps.close();
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Error al buscar alumno por ID: " + ex.getMessage());
+            }
+            return alumno;
+}
     
     
     
