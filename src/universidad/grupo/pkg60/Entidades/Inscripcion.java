@@ -33,6 +33,8 @@ public class Inscripcion {
     public Inscripcion() {
     }
 
+
+
     public int getIDInscripcion() {
         return IDInscripcion;
     }

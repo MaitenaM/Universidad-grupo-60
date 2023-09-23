@@ -15,6 +15,7 @@ public class Materias {
     private String Nombre;
     private int AnioMateria;
     private boolean Activo;
+    public String getNombre;
 
     public Materias() {
     }
@@ -68,6 +69,7 @@ public class Materias {
     public String toString() {
         return "Materias{" + "IDMateria=" + IDMateria + ", Nombre=" + Nombre + ", AnioMateria=" + AnioMateria + '}';
     }
+
     
     
     

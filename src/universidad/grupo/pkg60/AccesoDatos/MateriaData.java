@@ -6,6 +6,14 @@
 package universidad.grupo.pkg60.AccesoDatos;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+import universidad.grupo.pkg60.Entidades.Materias;
        
 
 /**
@@ -17,60 +25,58 @@ public class MateriaData {
     
     private Connection con = null;
     
-    // Atributos de la clase
-    private String Numero;
-    private String Anio;
-    
+
 
     // Constructor de la clase
-    public MateriaData(String Numero, String Anio) {
-        this.Numero = Numero;
-        this.Anio = Anio;
+    public MateriaData() {
+    con=Conexion.getConexion();
         
     }
 
-    // Métodos para acceder a los datos de inscripción
-    public void guardarInscripcionData() {
-        // Implementación para guardar los datos de inscripción
-    }
 
-    public void eliminarInscripcionData() {
-        // Implementación para eliminar los datos de inscripción
-    }
-
-    public void modificarInscripcionData() {
-        // Implementación para modificar los datos de inscripción
-    }
-
-    public void obtenerInscripcionData() {
-        // Implementación para obtener los datos de inscripción
-    }
-
-    public void filtrarInscripcionData() {
-        // Implementación para filtrar los datos de inscripción
-    }
-
-    public List<InscripcionData> obtenerInscripciones() {
-        // Implementación para obtener la lista de inscripciones
-        return new ArrayList<InscripcionData>();
-    }
 
     // Métodos para acceder a los datos de material
-    public void guardarMaterialData() {
-        // Implementación para guardar los datos de material
+    public void guardarMateriaData(Materias materia) {
+        String sql = "INSERT INTO materia (IDMateria, Nombre, AnioMateria, Activo) VALUES (?,?,?,?)";
+        try{
+            PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            
+            ps.setInt(1, materia.getIDMateria());
+            
+            ps.setString(2, materia.getNombre());
+           
+            ps.setInt(3, materia.getAnioMateria());
+          
+            ps.setBoolean(5, materia.isActivo());
+            
+            ps.executeUpdate();
+            ResultSet rs = ps.getGeneratedKeys();
+            if (rs.next()){
+                materia.setIDMateria(rs.getInt("idMateria"));
+                JOptionPane.showMessageDialog(null, "Materia añadida con exito");
+                
+            }
+            ps.close();
+        }catch (SQLException ex){
+            JOptionPane.showMessageDialog(null, "Error al cargar materia" + ex.getMessage());
+        }
     }
-
-    public void eliminarMaterialData() {
-        // Implementación para eliminar los datos de material
-    }
-
-    public void modificarMaterialData() {
+    
+      public void buscarMateriaData(int IDMateria) {
         // Implementación para modificar los datos de material
     }
 
-    public List<MaterialData> obtenerMateriales() {
+    public void eliminarMateriaData(int IDMateria) {
+        // Implementación para eliminar los datos de material
+    }
+
+    public void modificarMateriaData(Materias materia) {
+        // Implementación para modificar los datos de material
+    }
+
+    public List<MateriaData> listarMaterias() {
         // Implementación para obtener la lista de materiales
-        return new ArrayList<MaterialData>();
+        return new ArrayList<MateriaData>();
     }
 }
 
