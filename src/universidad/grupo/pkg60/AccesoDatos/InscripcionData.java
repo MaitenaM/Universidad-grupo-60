@@ -99,7 +99,8 @@ public List<Inscripcion> obtenerInscripcionesPorAlumno(int id){
                  "WHERE inscripcion.idAlumno = ?";
     try {
         PreparedStatement ps = con.prepareStatement(sql);
-        ResultSet rs = ps.executeQuery();
+        ps.setInt(1,id);
+        id ResultSet rs = ps.executeQuery();
 |        while(rs.next()){
             Materias materia = new Materias();
             int IDMateria = rs.getInt("idMateria");
