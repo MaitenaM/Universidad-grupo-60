@@ -12,7 +12,7 @@ package universidad.grupo.pkg60.Entidades;
 public class Materias {
     
     private int IDMateria;
-    private String Nombre;
+    private String Materia;
     private int AnioMateria;
     private boolean Activo;
     public String getNombre;
@@ -20,15 +20,15 @@ public class Materias {
     public Materias() {
     }
 
-    public Materias(int IDMateria, String Nombre, int AnioMateria, boolean Activo) {
+    public Materias(int IDMateria, String Materia, int AnioMateria, boolean Activo) {
         this.IDMateria = IDMateria;
-        this.Nombre = Nombre;
+        this.Materia = Materia;
         this.AnioMateria = AnioMateria;
         this.Activo = Activo;
     }
 
-    public Materias(String Nombre, int AnioMateria, boolean Activo) {
-        this.Nombre = Nombre;
+    public Materias(String Materia, int AnioMateria, boolean Activo) {
+        this.Materia =Materia;
         this.AnioMateria = AnioMateria;
         this.Activo = Activo;
     }
@@ -41,12 +41,12 @@ public class Materias {
         this.IDMateria = IDMateria;
     }
 
-    public String getNombre() {
-        return Nombre;
+    public String getMateria() {
+        return Materia;
     }
 
-    public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
+    public void setMateria(String Materia) {
+        this.Materia = Materia;
     }
 
     public int getAnioMateria() {
@@ -67,10 +67,14 @@ public class Materias {
 
     @Override
     public String toString() {
-        return "Materias{" + "IDMateria=" + IDMateria + ", Nombre=" + Nombre + ", AnioMateria=" + AnioMateria + '}';
+        return "Materias{" + "IDMateria=" + IDMateria + ", Nombre=" + Materia + ", AnioMateria=" + AnioMateria + '}';
     }
 
-    
+    /*public String getMateria() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    */
     
     
 }
