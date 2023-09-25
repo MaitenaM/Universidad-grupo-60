@@ -107,7 +107,7 @@ public List<Inscripcion> obtenerInscripcionesPorAlumno(int id){
             String Nombre = rs.getString("nombre");
              int AnioMateria = rs.getInt("anio");
              materia.setIDMateria(IDMateria); 
-             materia.setNombre(Nombre); 
+             materia.setMateria(Nombre); 
              materia.setAnioMateria(AnioMateria); 
              materias.add(materia);
              
