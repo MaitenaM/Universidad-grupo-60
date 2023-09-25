@@ -35,16 +35,17 @@ public class InscripcionData {
     }
     
     public void guardarInscripcion(Inscripcion insc){
-        String sql = "INSERT INTO inscripcion (isAlumno, idMateria, nota) VALUES(?, ?, ?)";
+        String sql = "INSERT INTO inscripcion (nota, idAlumno, idMateria) VALUES(?, ?, ?)";
         
         try{
-            PreparedStatement ps = con.prepareStatement(sql);
-            Alumno alumno = new Alumno();
-            ps.setInt(2, insc.getIDInscripcion());
-            ps.setDouble(3, insc.getNota());
-            ps.executeUpdate();
-            JOptionPane.showInternalMessageDialog(null, "La inscripcion fue guardada con exito.");
-            ps.close();
+            try (PreparedStatement ps = con.prepareStatement(sql)) {
+                Alumno alumno = new Alumno();
+                ps.setDouble(1,insc.getNota());
+                ps.setInt(2, insc.getAlumno().getIdAlumno());
+                ps.setDouble(3, insc.getMaterias().getIDMateria());
+                ps.executeUpdate();
+                JOptionPane.showMessageDialog(null, "La inscripcion fue guardada con exito.");
+            }
         } catch (SQLException e){
             JOptionPane.showMessageDialog(null, "Error al guardar la inscripcion."+ e.getMessage());
         }
@@ -63,6 +64,7 @@ public List<Inscripcion> obtenerInscripciones(){
                 double nota = rs.getDouble("nota");
                 Inscripcion inscripcion = new Inscripcion();
                 inscripciones.add(inscripcion);
+                
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al obtener inscripciones" + ex.getMessage() );
@@ -107,7 +109,7 @@ public List<Inscripcion> obtenerInscripcionesPorAlumno(int id){
             String Nombre = rs.getString("nombre");
              int AnioMateria = rs.getInt("anio");
              materia.setIDMateria(IDMateria); 
-             materia.setNombre(Nombre); 
+             materia.setMateria(Nombre); 
              materia.setAnioMateria(AnioMateria); 
              materias.add(materia);
              
@@ -143,13 +145,13 @@ public List<Inscripcion> obtenerInscripcionesPorAlumno(int id){
      public void actualizarNota(int idAlumno, int idMateria, double nota){
           String sql = "UPDATE inscripcion SET nota = ? WHERE idAlumno = ? AND idMateria = ?";
         try {
-            PreparedStatement ps = con.prepareStatement(sql);
-            ps.setDouble(1, nota);
-            ps.setInt(2, idAlumno);
-            ps.setInt(3, idMateria);
-            ps.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Nota actualizada con éxito.");
-            ps.close();
+              try (PreparedStatement ps = con.prepareStatement(sql)) {
+                  ps.setDouble(1, nota);
+                  ps.setInt(2, idAlumno);
+                  ps.setInt(3, idMateria);
+                  ps.executeUpdate();
+                  JOptionPane.showMessageDialog(null, "Nota actualizada con éxito.");
+              }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al actualizar nota: " + e.getMessage());
         }

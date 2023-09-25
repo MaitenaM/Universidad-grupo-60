@@ -9,8 +9,10 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import universidad.grupo.pkg60.AccesoDatos.AlumnoData;
 import universidad.grupo.pkg60.AccesoDatos.Conexion;
+import universidad.grupo.pkg60.AccesoDatos.InscripcionData;
 import universidad.grupo.pkg60.AccesoDatos.MateriaData;
 import universidad.grupo.pkg60.Entidades.Alumno;
+import universidad.grupo.pkg60.Entidades.Inscripcion;
 import universidad.grupo.pkg60.Entidades.Materias;
 
 
@@ -25,24 +27,24 @@ public class UniversidadGrupo60 {
      */
     public static void main(String[] args) {
         
-    /*   // Conexion.getConexion();
+       // Conexion.getConexion();
     //Alumnos alumno =new Alumnos(42650, "ariatello", "Fabrizzio",fecha2, true);
-    String fecha1 ="2000-06-20";
-        */
-    String fecha2 = "2000-01-01";
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-    LocalDate fecha3 = LocalDate.parse(fecha2,formatter);
-    
-   
-    /*
-    Alumno alum1 = new Alumno(42650, "ariatello", "Fabrizzio",fecha2, true);
-    Alumno alum2 = new Alumno(11111, "cabral", "Fabrizzio",fecha2, true);
-    Alumno alum3 = new Alumno(22222, "peña", "Fabrizzio",fecha2, true);
-    Alumno alum4 = new Alumno(33333, "piña", "Fabrizzio",fecha2, true);
-    */
+    //String fecha1 ="2000-06-20";
         
+    String fecha1 = "2000-01-01";
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    LocalDate fecha2 = LocalDate.parse(fecha1,formatter);
     AlumnoData alumnodata = new AlumnoData();
-    /*alumnodata.guardarAlumno(alum1);
+   
+   
+    Alumno alum1 = new Alumno(42650, "ariatello", "Fabrizzio",fecha2, true);
+    //Alumno alum2 = new Alumno(11111, "cabral", "Fabrizzio",fecha2, true);
+    // alum3 = new Alumno(22222, "peña", "Fabrizzio",fecha2, true);
+    // alum4 = new Alumno(33333, "piña", "Fabrizzio",fecha2, true);
+    
+    /*    
+    
+    alumnodata.guardarAlumno(alum1);
     alumnodata.guardarAlumno(alum2);
     alumnodata.guardarAlumno(alum3);
     alumnodata.guardarAlumno(alum4);
@@ -64,7 +66,7 @@ public class UniversidadGrupo60 {
     //alumnodata.guardarAlumno(alum5);
     
   MateriaData materia = new MateriaData();
-    //Materias mat3 = new Materias("Geografia",4,true);
+    Materias mat3 = new Materias("Geografia",4,true);
    // materia.guardarMateriaData(mat3);
     
     //Materias mat4 = new Materias("Ingles",4,true);
@@ -78,7 +80,14 @@ public class UniversidadGrupo60 {
    //materia.modificarMateriaData(mat5);
         //System.out.println(materia.listarMaterias());
         
-        materia.eliminarMateriaData(9);
+       // materia.eliminarMateriaData(9);
+       
+       
+       InscripcionData inscripcion = new InscripcionData();
+       Alumno pedro = alumnodata.buscarAlumno(6);
+       Materias  lengua = materia.buscarMateriaData(2);
+       Inscripcion inscri =new Inscripcion(pedro,lengua,8);
+       inscripcion.guardarInscripcion(inscri);
 }
 }
 
