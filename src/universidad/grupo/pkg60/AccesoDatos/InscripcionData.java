@@ -100,19 +100,17 @@ public List<Inscripcion> obtenerInscripcionesPorAlumno(int id){
     try {
         PreparedStatement ps = con.prepareStatement(sql);
         ps.setInt(1,id);
-        id ResultSet rs = ps.executeQuery();
-|        while(rs.next()){
+        ResultSet rs = ps.executeQuery();
+        while(rs.next()){
             Materias materia = new Materias();
             int IDMateria = rs.getInt("idMateria");
             String Nombre = rs.getString("nombre");
-             int AnioMateria = rs.getInt("Año");
+             int AnioMateria = rs.getInt("anio");
+             materia.setIDMateria(IDMateria); 
+             materia.setNombre(Nombre); 
+             materia.setAnioMateria(AnioMateria); 
              materias.add(materia);
-            
-                /* aca no se que es mejor
-             materia.setIDMateria(rs.getInt("idMateria"));
-                materia.setNombre(rs.getString("nombre"));
-                materia.setAnioMateria(rs.getInt("año"));
-                materias.add(materia);*/
+             
         }
          ps.close(); 
          rs.close();
