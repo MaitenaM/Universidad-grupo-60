@@ -26,68 +26,113 @@ public class UniversidadGrupo60 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
-       // Conexion.getConexion();
-    //Alumnos alumno =new Alumnos(42650, "ariatello", "Fabrizzio",fecha2, true);
-    //String fecha1 ="2000-06-20";
-        
-    String fecha1 = "2000-01-01";
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-    LocalDate fecha2 = LocalDate.parse(fecha1,formatter);
-    AlumnoData alumnodata = new AlumnoData();
-   
-   
-    Alumno alum1 = new Alumno(42650, "ariatello", "Fabrizzio",fecha2, true);
-    //Alumno alum2 = new Alumno(11111, "cabral", "Fabrizzio",fecha2, true);
-    // alum3 = new Alumno(22222, "peña", "Fabrizzio",fecha2, true);
-    // alum4 = new Alumno(33333, "piña", "Fabrizzio",fecha2, true);
     
-    /*    
+    //Formatizando Fechas    
+        
+    String f1= "2000-05-01";
+    String f2= "2001-01-23";
+    String f3= "2000-12-25";
+    String f4= "1998-03-17";
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    LocalDate fecha1 = LocalDate.parse(f1,formatter);
+    LocalDate fecha2 = LocalDate.parse(f2,formatter);
+    LocalDate fecha3 = LocalDate.parse(f3,formatter);
+    LocalDate fecha4 = LocalDate.parse(f4,formatter);
+  
+  
+    //INSTACIAMIENTO DE LAS CLASES PARA USO DE LOS METODOS
+    
+    AlumnoData alumnodata = new AlumnoData();
+    MateriaData materiadata = new MateriaData();
+    InscripcionData inscripcion = new InscripcionData();
+    
+    //Creacion de alumnos
+    
+    Alumno alum1 = new Alumno(14, 25871933,"Cabral","Matias",fecha1,true);
+    Alumno alum2 = new Alumno(15, 58234130,"Perez","Agustin",fecha2,true);
+    Alumno alum3 = new Alumno(16, 15487879,"Rios","Federico",fecha3,true);
+    Alumno alum4 = new Alumno(17, 18646832,"Gomez","Elias",fecha4,true);
+    
+
+    
+    //Agregar Alumnos
     
     alumnodata.guardarAlumno(alum1);
     alumnodata.guardarAlumno(alum2);
     alumnodata.guardarAlumno(alum3);
     alumnodata.guardarAlumno(alum4);
-    */
     
-    /*Materias mat = new Materias("Matematica",2,true);
-    Materias mat2 = new Materias("Lengua",1,true);
-    MateriaData materiadata = new MateriaData();
-    //materiadata.guardarMateriaData(mat);
-    //materiadata.guardarMateriaData(mat2);
-    Materias mat3 = new Materias("Matematica", 3, true);
-        System.out.println(materiadata.buscarMateriaData(4));
-*/
-    //Alumno alum4 = new Alumno(44444, "piña", "Pedro",fecha3, true);
-    //alumnodata.guardarAlumno(alum4);
-    //System.out.println(alumnodata.buscarAlumno(8).getApellido());
-    //System.out.println(alumnodata.buscarAlumnoPorDni(33333).getNombre());
-    //Alumno alum5 = new Alumno(46843, "smit", "Pedro",fecha3, true);
-    //alumnodata.guardarAlumno(alum5);
     
-  MateriaData materia = new MateriaData();
-    Materias mat3 = new Materias("Geografia",4,true);
-   // materia.guardarMateriaData(mat3);
+    //Asignando Alumnos a Variables
     
-    //Materias mat4 = new Materias("Ingles",4,true);
-    //materia.guardarMateriaData(mat4);
-    //Materias mat5 = new Materias("Educ. Fisica",1,true);
-    //materia.guardarMateriaData(mat5);
-        //System.out.println(materia.buscarMateriaData(7).getMateria());
-   // Alumno alum1 = new Alumno(1,42650, "ariatello", "Fabrizzio",fecha3, true);
-   //alumnodata.modificarAlumno(alum1);
-   //Materias mat5 = new Materias(9,"Educ. Fisica",2,true);
-   //materia.modificarMateriaData(mat5);
-        //System.out.println(materia.listarMaterias());
-        
-       // materia.eliminarMateriaData(9);
+    
+    Alumno Matias = alumnodata.buscarAlumno(14);
+    Alumno Agustin = alumnodata.buscarAlumno(15);
+    Alumno Federico = alumnodata.buscarAlumno(16);
+    Alumno Elias = alumnodata.buscarAlumno(17);
+    
+    
+    
+    
+    //Creacion Materias
+    
+    Materias mat1 = new Materias ("Matematica 1", 1, true);
+    Materias mat2 = new Materias ("Matematica 2", 2, true);
+    Materias mat3 = new Materias ("Lengua 1", 1, true);
+    Materias mat4 = new Materias ("Quimica 3", 3, true);
+    Materias mat5 = new Materias ("Educacion Fisica 1", 1, true);
+    Materias mat6 = new Materias ("Fisica 3",3, true);
+    Materias mat7 = new Materias ("Algoritmo 4", 4, true);
+    
+    //Agregar Materias
+    
+    materiadata.guardarMateriaData(mat1);
+    materiadata.guardarMateriaData(mat2);
+    materiadata.guardarMateriaData(mat3);
+    materiadata.guardarMateriaData(mat4);
+    materiadata.guardarMateriaData(mat5);
+    materiadata.guardarMateriaData(mat6);
+    materiadata.guardarMateriaData(mat7);
+    
+    
+    //Asignando Materias a variables
+    
+    
+    Materias Matematica1 = materiadata.buscarMateriaData(10);
+    Materias Matematica2 = materiadata.buscarMateriaData(11);
+    Materias Lengua1 = materiadata.buscarMateriaData(12);
+    Materias Quimica3 = materiadata.buscarMateriaData(13);
+    Materias EducacionFisica1 = materiadata.buscarMateriaData(14);
+    Materias Fisica3 = materiadata.buscarMateriaData(15);
+    Materias Algoritmo4 = materiadata.buscarMateriaData(16);
+    
+
+    
+    
+    // Creacion de Incripciones
+    
+    Inscripcion ins1 = new Inscripcion(Matias,Matematica1,10);
+    Inscripcion ins2 = new Inscripcion(Agustin,Lengua1,8);
+    Inscripcion ins3 = new Inscripcion(Elias,Quimica3,7);
+    Inscripcion ins4 = new Inscripcion(Matias,Algoritmo4,10);
+    Inscripcion ins5 = new Inscripcion(Federico,EducacionFisica1,5);
+    Inscripcion ins6 = new Inscripcion(Federico,Matematica2,2);
+    
+    
+    
+    //Agregacion de Inscripciones
+    
+    
+    inscripcion.guardarInscripcion(ins1);
+    inscripcion.guardarInscripcion(ins2);
+    inscripcion.guardarInscripcion(ins3);
+    inscripcion.guardarInscripcion(ins4);
+    inscripcion.guardarInscripcion(ins5);
+    inscripcion.guardarInscripcion(ins6);
+    
+    
        
-       
-       InscripcionData inscripcion = new InscripcionData();
-       Alumno pedro = alumnodata.buscarAlumno(6);
-       Materias  lengua = materia.buscarMateriaData(2);
-       Inscripcion inscri =new Inscripcion(pedro,lengua,8);
-       inscripcion.guardarInscripcion(inscri);
+    
 }
 }
 
