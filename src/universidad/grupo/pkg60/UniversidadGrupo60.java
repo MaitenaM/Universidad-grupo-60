@@ -56,11 +56,13 @@ public class UniversidadGrupo60 {
 
     
     //Agregar Alumnos
-    
+   /* 
     alumnodata.guardarAlumno(alum1);
     alumnodata.guardarAlumno(alum2);
     alumnodata.guardarAlumno(alum3);
     alumnodata.guardarAlumno(alum4);
+    */
+    /*
     
     
     //Asignando Alumnos a Variables
@@ -131,8 +133,75 @@ public class UniversidadGrupo60 {
     inscripcion.guardarInscripcion(ins6);
     
     
-       
+     */  
     
-}
-}
+    //Listar Inscripciones
+    /*
+        for (Inscripcion ins : inscripcion.obtenerInscripciones() ){
+            System.out.println("------------------------------------");
+            
+            System.out.println("ID: "+ ins.getIDInscripcion());
+            System.out.println("Alumnos: " + ins.getAlumno());
+            System.out.println("Materia: " + ins.getMaterias());
+            System.out.println("Nota: " + ins.getNota());
+            
+            System.out.println("------------------------------------");
+            
+        } 
+    */
+    
+    /*    
+    for (Inscripcion ins : inscripcion.obtenerInscripcionesPorId(16) ){
+            System.out.println("------------------------------------");
+            
+            System.out.println("ID: "+ ins.getIDInscripcion());
+            System.out.println("Alumnos: " + ins.getAlumno());
+            System.out.println("Materia: " + ins.getMaterias());
+            System.out.println("Nota: " + ins.getNota());
+            
+            System.out.println("------------------------------------");
+        
+    
+           }
+           */
+    /*
+    for (Materias ins : inscripcion.obtenerMateriasCursadas(16)){
+            System.out.println("------------------------------------");
+            
+            
+            System.out.println("Materia: " + ins.getMateria());
+            
+            System.out.println("------------------------------------");
+        
+    
+           }
 
+           */
+    /*
+    for (Materias ins : inscripcion.obtenerMateriasNOCursadas(16)){
+            System.out.println("------------------------------------");
+            
+            
+            System.out.println("Materia: " + ins.getMateria());
+            
+            System.out.println("------------------------------------");
+        
+    
+           } */
+    //inscripcion.borrarInscripcionMateriaAlumno(16,11);
+    
+    //inscripcion.actualizarNota(15, 12, 7);
+    
+    for (Alumno ins : inscripcion.obtenerAlumnosXMateria(10)){
+            System.out.println("------------------------------------");
+            
+            
+            System.out.println("Nombre: " + ins.getNombre());
+            System.out.println("Apellido: " + ins.getApellido());
+            
+            System.out.println("------------------------------------");
+        
+    
+           }
+}
+}
